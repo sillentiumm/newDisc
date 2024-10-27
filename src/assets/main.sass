@@ -1,0 +1,480 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap')
+
+  
+$color-dark: #0A1F38
+$color-dark-middle: #1B2F46
+$color-gray: #9DA5AF
+
+$color-green-light: #B1C909
+$color-green: #A5BB0C
+$color-green-middle: #97AB0D
+$color-green-dark: #819400
+  
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: "Montserrat", sans-serif
+
+h1
+  font-size: 104px
+  font-weight: 900
+  line-height: .9
+  color: #fff
+
+h2 
+  font-size: 48px
+  font-weight: 500
+  color: #fff  
+
+h3
+  font-size: 32px
+  font-weight: 400 
+  line-height: 1.4
+
+h4 
+  font-size: 24px
+  font-weight: 600
+
+.text-small
+  font-size: 18px
+  font-weight: 400
+  color: #fff
+
+.text-small-bold
+  font-size: 18px
+  font-weight: 700
+
+.text-normal
+  font-size: 20px
+  font-weight: 500
+  
+.desktop
+  display: flex
+
+.error 
+  width: 100%
+  background: rgba(255, 116, 97, 0.1)
+  border-radius: 24px
+  font-size: 18px
+  font-weight: 400
+  color: #FF7461
+  padding: 8px 20px
+
+  &__small
+    font-size: 18px
+    font-weight: 400
+    color: #FF7461
+    margin-top: 8px
+    margin-left: 24px
+
+.header
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding-top: 40px
+  padding-bottom: 40px
+
+  &__flex
+    position: relative
+    display: flex
+    align-items: center
+    gap: 12px
+
+  &__logout
+    position: absolute
+    top: 72px
+    right: 0
+    background: $color-dark-middle
+    box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.6)
+    border-radius: 12px
+    padding: 40px
+    z-index: 40
+    cursor: pointer
+
+    &::before
+      content: ''
+      position: absolute
+      top: -18px
+      right: 18px
+      border: 9px solid transparent
+      border-bottom: 9px solid $color-dark-middle
+
+    &__btn
+      background: transparent
+      border: none
+      color: $color-green-light
+      z-index: 40
+
+
+.section
+  min-height: 100vh
+  // height: 100vh
+  background: $color-dark
+
+.container  
+  width: 1600px
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  margin: 0 auto
+
+.btn
+  min-width: 56px
+  height: 56px
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 12px
+  background: $color-green-light
+  border: none
+  border-radius: 32px
+  font-size: 20px
+  font-weight: 500
+  color: #fff
+  padding: 12px 24px
+  cursor: pointer
+
+  &:hover
+    background: $color-green-middle
+
+  &:active  
+    background: $color-green-dark
+
+  &__small
+    position: absolute
+    top: 19px
+    left: 19px
+
+  &__user 
+    position: absolute
+    top: 14px
+    left: 17px
+
+  &__empty
+    border: none
+    background: transparent
+    font-size: 18px
+    font-weight: 700
+    color: $color-green-light
+
+  &__tasklist
+    position: fixed
+    right: 40px
+    bottom: 40px
+    box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.6)
+    z-index: 10
+
+  &__dark
+    background: $color-dark-middle
+    
+    &:hover, &:focus
+      background: $color-dark-middle
+
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear
+  display: none
+
+.input
+  width: 100%
+  height: 72px
+  background-color: #fff
+  border-radius: 36px
+  color: $color-dark
+  outline: none
+  padding-left: 28px
+  padding-right: 28px
+
+  &:focus, &:hover
+    border: 2px solid $color-green-light
+
+  &__title
+    color: $color-gray
+    padding-left: 24px
+    padding-right: 24px
+
+  &__wrapper 
+    position: relative
+    padding-top: 8px
+    padding-bottom: 24px
+
+    &__img
+      width: 32px
+      height: 32px
+      display: flex
+      justify-content: center
+      align-items: center
+      position: absolute
+      top: 26px
+      right: 21px
+
+.textarea
+  width: 100%
+  max-width: 100% 
+  min-height: 168px
+  height: 72px
+  background-color: #fff
+  border-radius: 36px
+  font-size: 18px
+  color: $color-dark
+  outline: none
+  padding-top: 16px
+  padding-left: 28px
+  padding-right: 28px
+
+  &:focus, &:hover
+    border: 2px solid $color-green-light
+
+  &__wrapper 
+    position: relative
+    padding-top: 8px
+    padding-bottom: 24px
+
+  &__count
+    display: flex
+    justify-content: end
+    color: $color-gray
+    margin-top: 8px
+
+.main
+  &__content
+    display: flex
+    align-items: center
+
+  &__left
+    max-width: 642px
+    color: $color-gray
+    margin-right: 60px
+
+    & h1
+      margin-bottom: 40px
+
+  &__right
+    width: 53%
+    // height: calc( 100% - 136px )
+    & img 
+      width: 100%
+
+.taskslist
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  align-items: start
+  gap: 20px 40px
+  width: 100%
+
+  &__content
+    position: relative
+    display: flex
+    flex-grow: 1
+    padding-bottom: 24px
+
+  &__btn
+    width: 100%
+    display: flex
+    justify-content: end
+    margin-top: 40px
+
+.task
+  position: relative
+  min-height: 50px
+  height: inherit
+  color: #fff
+  background-color: $color-green-light
+  box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.4)
+  border-radius: 12px
+  
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    border: 20px solid transparent
+    border-top: 20px solid $color-dark
+    border-right: 20px solid $color-dark
+
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    border: 20px solid transparent
+    border-bottom: 20px solid $color-green
+    border-left: 20px solid $color-green
+    border-bottom-left-radius: 12px
+
+  &__header
+    padding: 20px 28px
+    border-bottom: 1px solid $color-green-middle
+
+  &__body
+    padding: 28px  
+
+  &__footer
+    display: flex
+    justify-content: end
+    padding: 8px
+
+    &__btn
+      display: flex
+      align-items: center
+      gap: 12px
+      background: transparent
+      border: none
+      color: #fff
+      padding: 12px 24px
+      cursor: pointer
+
+.modal 
+  width: 100vw
+  height: 100vh
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  background: rgba(0, 0, 0, .4)
+  z-index: 30
+
+  &__body
+    &__flex
+      display: flex
+      justify-content: space-between
+      margin-bottom: 20px
+
+    &__text
+      display: flex
+      align-items: center
+      gap: 4px
+      color: $color-gray
+
+  &__content
+    width: 780px
+    position: relative
+    background: $color-dark-middle
+    border-radius: 40px
+    padding: 80px
+
+  &__header
+    margin-bottom: 40px
+
+  &__exit 
+    position: absolute
+    top: 20px
+    right: 20px
+
+
+@media (max-width: 1680px) 
+  .container
+    width: inherit
+    padding-left: 80px
+    padding-right: 80px
+
+  header 
+    padding-top: 20px
+    padding-bottom: 20px
+
+  .modal
+    &__content
+      width: 594px
+      padding: 56px
+
+    &__body__text
+      flex-direction: column
+      align-items: start
+
+
+@media (max-width: 1366px)
+  .container
+    padding-left: 40px
+    padding-right: 40px
+
+  .btn__tasklist
+    right: 12px  
+
+  .main
+    &__content
+      flex-direction: column
+
+    &__left
+      max-width: inherit
+      text-align: center
+      margin-right: 0
+
+    &__right 
+      width: 100%
+
+  .modal
+    &__content
+      width: 688px
+    &__body__text
+      flex-direction: row
+      align-items: center
+
+  .taskslist
+    grid-template-columns: repeat(2, 1fr)
+
+
+@media (max-width: 768px)
+  h1
+    font-size: 60px
+
+  h2
+    font-size: 32px  
+
+  h3
+    font-size: 24px
+
+  .text-small
+    font-size: 14px
+
+  .desktop
+    display: none  
+
+  .btn
+    justify-content: center
+
+    &__empty
+      font-size: 14px
+
+    &__tasklist
+      right: 8px
+
+    &__dark
+      min-width: 36px
+      height: 36px
+      padding: 0
+
+    &__user
+      width: 12.8px
+      height: 18px
+      top: 9px
+      left: 11.5px
+
+  .container
+    padding-left: 20px
+    padding-right: 20px
+
+  .header-logo
+    max-width: 154px
+
+  .modal
+    &__content
+      width: 100%
+      height: 100vh
+      padding: 90px 16px
+
+    &__body
+      &__flex
+        flex-direction: column
+
+      &__text
+        order: 2
+        align-items: center
+        justify-content: center
+        margin-top: 20px
+
+  .taskslist
+    grid-template-columns: repeat(1, 1fr)
